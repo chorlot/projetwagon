@@ -1,6 +1,6 @@
-streamlit
+streamlit>=1.20.0
 folium
 geopandas
 pandas
-streamlit-folium
 branca
+streamlit-folium
