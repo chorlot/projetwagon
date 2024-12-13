@@ -7,11 +7,11 @@ from branca.colormap import linear
 from streamlit_folium import st_folium
 
 # Charger les fichiers GeoJSON pour les régions et départements
-regions_geojson = '/Users/charlesdurand/code/Test/a-reg2021.json'
-departments_geojson = '/Users/charlesdurand/code/Test/a-dep2021.json'
+regions_geojson = 'reg.json'
+departments_geojson = 'dep.json'
 
 # Charger les données de villes
-df = pd.read_csv('/Users/charlesdurand/code/Test/bquxjob_18c980e7_193bb25eab7.csv')
+df = pd.read_csv('score_com.csv')
 df['score_de_ville'] = df['score_de_ville'].fillna(0)
 
 # Calculer les scores moyens par région et département
