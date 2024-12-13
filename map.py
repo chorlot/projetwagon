@@ -9,7 +9,7 @@ from streamlit_folium import st_folium
 # Fonction de chargement des données avec mise en cache
 @st.cache_data
 def load_data():
-    df = pd.read_csv('/path/to/data.csv')
+    df = pd.read_csv('score_com.csv')
     return df
 
 # Charger les données
