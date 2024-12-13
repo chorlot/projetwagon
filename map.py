@@ -11,7 +11,7 @@ regions_geojson = 'reg.json'
 departments_geojson = 'dep.json'
 
 # Charger les données de villes
-df = pd.read_csv('score_com.csv')
+df = pd.read_csv('score_com_final.csv')
 df['score_de_ville'] = df['score_de_ville'].fillna(0)
 
 # Calculer les scores moyens par région et département
