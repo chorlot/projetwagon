@@ -113,26 +113,21 @@ with tab1:
     df_copy["score_de_ville"] = df_copy.sum(axis=1)  # Calculate final score
     df_copy = df_copy.reset_index()  # Reset index for display
 
-    # Créer une copie initiale pour préserver les données originales
-    filtered_data_top50 = filtered_data.copy()
-    filtered_data_littoral = filtered_data.copy()
-
-    if top50:
-        st.write("Vous affichez le TOP 50 des communes de France correspondant à vos critères.")
-        filtered_data_top50 = filtered_data_top50.set_index(
-            ['dep_code', 'dep_nom', 'latitude_mairie', 'com_insee', 
-            'coordonnees', 'population', 'longitude_mairie', 
-            'reg_nom', 'densite', 'com_nom', 'grille_densite']
-        )
-        filtered_data_top50 = filtered_data_top50.mul(pd.Series(weights), axis=1)
-        filtered_data_top50["score_de_ville"] = filtered_data_top50.sum(axis=1)
-        filtered_data_top50 = filtered_data_top50.reset_index().sort_values(
-            by="score_de_ville", ascending=False
-        ).head(50)
-
+    # Appliquer les filtres principaux sur filtered_data
     if littoral:
         st.write("Vous affichez seulement les communes littorales de France.")
-        filtered_data_littoral = filtered_data_littoral[filtered_data_littoral["indice_littoral"] == 1]
+        filtered_data = filtered_data[filtered_data["indice_littoral"] == 1]
+        
+    if top50:
+        st.write("Vous affichez le TOP 50 des communes de France correspondant à vos critères.")
+        # Trier et sélectionner le top 50
+        filtered_data = filtered_data.copy()
+        filtered_data = filtered_data.set_index(['dep_code', 'dep_nom', 'latitude_mairie', 'com_insee', 
+                                                'coordonnees', 'population', 'longitude_mairie', 
+                                                'reg_nom', 'densite', 'com_nom', 'grille_densite'])
+        filtered_data = filtered_data.mul(pd.Series(weights), axis=1)
+        filtered_data["score_de_ville"] = filtered_data.sum(axis=1)
+        filtered_data = filtered_data.reset_index().sort_values(by="score_de_ville", ascending=False).head(50)
 
     if "score_de_ville" not in filtered_data.columns:
         filtered_data = filtered_data.set_index(['dep_code', 'dep_nom', 'latitude_mairie', 'com_insee', 
