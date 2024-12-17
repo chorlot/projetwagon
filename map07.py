@@ -189,7 +189,7 @@ with tab1:
     #add filtered data to kepler
     map_.add_data(data=filtered_kepler_data, name="Filtered Data")
     #save map to html and integrate to streamlit
-    map_.save_to_html(file_name='kepler_map.html')
+    map_.save_to_html(file_name='kepler_map.html', read_only=True)
     st.components.v1.html(open('kepler_map.html', 'r').read(), height=800)
 
 with tab2:
