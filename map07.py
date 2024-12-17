@@ -3,11 +3,11 @@ import pandas as pd
 from keplergl import KeplerGl
 import geopandas as gpd
 # Charger les fichiers GeoJSON pour les régions et départements
-regions_geojson = r'C:\Users\galaa\Documents\01-data_analytics_bootcamp\Qualite de Vie\tests\a-reg2021.json'
-departments_geojson = r'C:\Users\galaa\Documents\01-data_analytics_bootcamp\Qualite de Vie\tests\a-dep2021.json'
+regions_geojson = 'reg.json'
+departments_geojson = 'dep.json'
 # Charger les données de villes
-df = pd.read_csv(r'C:\Users\galaa\Documents\01-data_analytics_bootcamp\Qualite de Vie\tests\indices_simples_ok.csv')
-df2 = pd.read_csv(r'C:\Users\galaa\Documents\01-data_analytics_bootcamp\Qualite de Vie\tests\indices_complets_ok.csv')
+df = pd.read_csv('indices_simples_ok.csv')
+df2 = pd.read_csv('indices_complets_ok.csv')
 
 tab1, tab2 = st.tabs(["CARTE", "TABLEAU"])
 
