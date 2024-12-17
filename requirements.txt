@@ -1,6 +1,4 @@
-streamlit>=1.20.0
-folium
-geopandas
+streamlit
 pandas
-branca
-streamlit-folium
+keplergl
+geopandas
