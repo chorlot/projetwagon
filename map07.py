@@ -8,6 +8,10 @@ departments_geojson = 'dep.json'
 # Charger les données de villes
 df = pd.read_csv('indices_simples_ok.csv')
 df2 = pd.read_csv('indices_complets_ok.csv')
+#TITRE
+st.set_page_config(page_title="Projet QV", page_icon="🏠")
+st.title('Projet QV')
+st.write('Qualité de Vie en France Métropolitaine')
 # Light/Dark Mode Selection
 st.sidebar.header("Options d'affichage")
 dark_mode = st.sidebar.checkbox("Activer le Dark Mode")
