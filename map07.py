@@ -332,9 +332,7 @@ with tab1:
     # Initialize session state for slider values if not already initialized
     if "slider_values" not in st.session_state:
         st.session_state.slider_values = {key: 5 for key in questions}  # Default values
-        # Initialize each keys for each slider in session state
-        for key in questions:
-            st.session_state[key] = 5
+        
     # si on clique sur Réinitialiser
     if st.sidebar.button("Réinitialiser"):
         # Reset slider values to default value
