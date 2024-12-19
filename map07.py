@@ -532,7 +532,7 @@ with tab2:
     df2_filtered['prive'] = df2_filtered['prive'].apply(lambda x: f"{x} €" if pd.notnull(x) else "")
     df2_filtered['publique'] = df2_filtered['publique'].apply(lambda x: f"{x} €" if pd.notnull(x) else "")
     df2_filtered['T2_2024'] = df2_filtered['T2_2024'].apply(lambda x: f"{x} %" if pd.notnull(x) else "")
-
+    
     # Renommer les colonnes pour l'affichage
     df2_filtered = df2_filtered.rename(columns={
         'com_insee': 'Code_insee',
@@ -581,7 +581,7 @@ with tab2:
         'College': 'Collège',
         'Medico_social': 'Médico-social'
     })
-
+    df2["Code_insee"] = df2["Code_insee"].astype(str
     # Tables à afficher avec les nouveaux noms de colonnes
     tables = {
         "Données Globales": df2_filtered[['Code_insee', 'Commune', 'Région', 'Département', 'Population', 'Urbanisation']],
