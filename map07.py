@@ -14,12 +14,12 @@ st.set_page_config(
 @st.cache_data(ttl=3600)
 def load_data_simple():
     """Charge les données depuis un fichier CSV."""
-    return pd.read_csv('indices_simples_ok.csv', dtype={'Code_insee': str})
+    return pd.read_csv('indices_simples_ok.csv', dtype={'Code_insee': str, 'dep_code': str})
 
 @st.cache_data(ttl=3600)
 def load_data_complet():
     """Charge les données depuis un fichier CSV."""
-    return pd.read_csv('indices_complets_ok.csv', dtype={'Code_insee': str})
+    return pd.read_csv('indices_complets_ok.csv', dtype={'Code_insee': str, 'dep_code': str})
 # Charger les données de villes
 df = load_data_simple()
 df2 = load_data_complet()
