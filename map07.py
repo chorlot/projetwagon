@@ -581,7 +581,7 @@ with tab2:
         'College': 'Collège',
         'Medico_social': 'Médico-social'
     })
-    df2["Code_insee"] = df2["Code_insee"].astype(str
+    df2["Code_insee"] = df2["Code_insee"].astype(str)
     # Tables à afficher avec les nouveaux noms de colonnes
     tables = {
         "Données Globales": df2_filtered[['Code_insee', 'Commune', 'Région', 'Département', 'Population', 'Urbanisation']],
