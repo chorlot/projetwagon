@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from keplergl import KeplerGl
 import geopandas as gpd
-from st_aggrid import AgGrid, GridOptionsBuilder
+
 #page config (icone, titre d'onglet, layout)
 st.set_page_config(
     page_title="Projet QV",
