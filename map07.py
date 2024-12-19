@@ -26,7 +26,7 @@ df2 = load_data_complet()
 df = df[~df['com_nom'].str.contains("Arrondissement", case=False, na=False)]
 df2 = df2[~df2['com_nom'].str.contains("Arrondissement", case=False, na=False)]
 
-st.sidebar.image(r'C:\Users\galaa\Documents\01-data_analytics_bootcamp\Qualite de Vie\tests\PROJET QV3.png')
+st.sidebar.image('PROJET QV.png')
 #TITRE
 st.title('Projet QV')
 st.header('Qualité de Vie en France Métropolitaine', divider="grey")
@@ -648,7 +648,7 @@ with tab4:
 
     st.header('Construction de la base de données')
     left, right = st.columns(2, vertical_alignment="top")
-    left.image(r'C:\Users\galaa\Documents\01-data_analytics_bootcamp\Qualite de Vie\tests\flowchart_mermaid.png')
+    left.image('flowchart_mermaid.png')
     right.write('')
     right.write('**Étape 1** : Upload des tables brutes (raw data) dans BiqQuery.')
     right.write('')
