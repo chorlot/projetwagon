@@ -749,7 +749,7 @@ WITH t1 AS (
     apl_aux_dentistes,
     (apl_aux_dentistes - MIN(apl_aux_dentistes) OVER ()) / 
     (MAX(apl_aux_dentistes) OVER () - MIN(apl_aux_dentistes) OVER ()) AS apl_aux_dentistes_norm
-  FROM projet-qv.join_data.join_sante
+  FROM join_sante
 ),
 
 -- Étape 2: Pondération des apl_normalisés + ajout d'un score par commune
@@ -772,7 +772,7 @@ SELECT
   cc.nom_standard,
   (t2.indice_APL_all - MIN(t2.indice_APL_all) OVER ()) / 
   (MAX(t2.indice_APL_all) OVER () - MIN(t2.indice_APL_all) OVER ()) AS indice_sante
-FROM projet-qv.clean_data.clean_communes AS cc
+FROM cleandata_communes AS cc
 LEFT JOIN t2 ON cc.code_insee = t2.code_commune;
 """)
 
