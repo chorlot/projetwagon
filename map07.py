@@ -10,12 +10,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
     )
 #st.cache_data
-@st.cache_data(ttl=3600)
+
 def load_data_simple():
     """Charge les données depuis un fichier CSV."""
     return pd.read_csv('indices_simples_ok.csv')
 
-@st.cache_data(ttl=3600)
+
 def load_data_complet():
     """Charge les données depuis un fichier CSV."""
     return pd.read_csv('indices_complets_ok.csv')
