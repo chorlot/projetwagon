@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from keplergl import KeplerGl
-import geopandas as gpd
 
 #page config (icone, titre d'onglet, layout)
 st.set_page_config(
@@ -14,12 +13,12 @@ st.set_page_config(
 @st.cache_data(ttl=3600)
 def load_data_simple():
     """Charge les données depuis un fichier CSV."""
-    return pd.read_csv('indices_simples_ok.csv', dtype={'Code_insee': str, 'dep_code': str})
+    return pd.read_csv('indices_simples_ok.csv')
 
 @st.cache_data(ttl=3600)
 def load_data_complet():
     """Charge les données depuis un fichier CSV."""
-    return pd.read_csv('indices_complets_ok.csv', dtype={'Code_insee': str, 'dep_code': str})
+    return pd.read_csv('indices_complets_ok.csv')
 # Charger les données de villes
 df = load_data_simple()
 df2 = load_data_complet()
