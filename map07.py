@@ -771,7 +771,7 @@ SELECT
   cc.nom_standard,
   (t2.indice_APL_all - MIN(t2.indice_APL_all) OVER ()) / 
   (MAX(t2.indice_APL_all) OVER () - MIN(t2.indice_APL_all) OVER ()) AS indice_sante
-FROM projet-qv.clean_data.clean_communes AS cc
+FROM clean_communes AS cc
 LEFT JOIN t2 ON cc.code_insee = t2.code_commune;
 """)
 
