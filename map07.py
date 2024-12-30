@@ -724,7 +724,7 @@ with tab4:
     st.code(f"""
 -- ----------------- TABLE DÉFINITIVE -----------------
 -- Étape 1: Normalisation de chaque colonne
-CREATE OR REPLACE TABLE projet-qv.agg_data.indice_sante AS
+CREATE OR REPLACE TABLE indice_sante AS
 WITH t1 AS (
   SELECT
     code_commune,
@@ -748,7 +748,7 @@ WITH t1 AS (
     apl_aux_dentistes,
     (apl_aux_dentistes - MIN(apl_aux_dentistes) OVER ()) / 
     (MAX(apl_aux_dentistes) OVER () - MIN(apl_aux_dentistes) OVER ()) AS apl_aux_dentistes_norm
-  FROM projet-qv.join_data.join_sante
+  FROM join_sante
 ),
 
 -- Étape 2: Pondération des apl_normalisés + ajout d'un score par commune
